@@ -94,4 +94,9 @@ public class Contact {
             this.addresses.addAll(addresses);         
         }
     }
+
+    public void addAddress(Address address) {
+        this.addresses.add(address);
+        address.setContact(this);
+    }
 }

@@ -2,9 +2,12 @@ package br.ifsp.contacts.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import br.ifsp.contacts.model.Contact;
-import java.util.List;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 
 public interface ContactRepository extends JpaRepository<Contact, Long> {
-    List<Contact> findByNomeContainingIgnoreCase(String nome);
+
+    Page<Contact> findByNomeContainingIgnoreCase(String nome, Pageable pageable);
+    
 }
